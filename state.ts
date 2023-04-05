@@ -1,7 +1,7 @@
 //import { refreshUI } from './utils';
-import { Ticket, cart,  } from './types';
+import { Ticket, Cart } from './types';
 
-const cart:cart = {
+const cart: Cart = {
   items: [],
   total: 0,
 };
@@ -22,10 +22,10 @@ export const removeFromCart = (item: Ticket) => {
   //refreshUI(item);
 };
 
-export const getCartItems = () => {
+export const getCartItems = (): Ticket[] => {
   return cart.items;
 };
 
-export const getTotal = () => {
+export const getTotal = (): number => {
   return cart.total;
 };

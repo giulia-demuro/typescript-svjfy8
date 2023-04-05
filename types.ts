@@ -11,9 +11,27 @@ export type Ticket = {
   price: number;
 };
 
-export type cartList = Ticket[];
+export type CartList = Ticket[];
 
-export type cart = {
+export type Cart = {
   items: Ticket[];
   total: number;
+};
+
+export type CompanyInfo = {
+  companyName: string;
+  companyLogo: string;
+  aircraftType: string;
+};
+
+export type FlightInfo = {
+  depTime: string;
+  depAirport: string;
+  arrTime: string;
+  arrAirport: string;
+};
+
+export type BookingInfo = {
+  flightClass: string;
+  passengers: number;
 };

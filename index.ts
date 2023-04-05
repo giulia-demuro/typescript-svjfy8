@@ -1,6 +1,18 @@
-// Import stylesheets
+import { ticketsList } from './components/ticketsList';
+/*import { createCart } from './components/cart'; */
+
 import './style.css';
 
-// Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+const appDiv = document.getElementById('app');
+
+const containerDiv = document.createElement('div');
+
+containerDiv.setAttribute('id', 'container');
+containerDiv.classList.add('d-flex');
+
+const ticketsUl = ticketsList();
+const cart = createCart();
+
+containerDiv.append(ticketsUl, cart);
+
+appDiv.appendChild(containerDiv);

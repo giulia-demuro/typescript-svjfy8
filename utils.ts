@@ -1,10 +1,11 @@
 import { removeFromCart, getCartItems, getTotal } from './state';
 import { createCartElement } from './components/cartElement';
+import { Ticket, cart } from './types';
 
-export const refreshUI = (item) => {
+export const refreshUI = (item: Ticket) => {
   refreshCartElements();
 
-  const selectedElement = document.getElementById(item.price);
+  const selectedElement = document.getElementById(String(item.price));
   selectedElement.classList.toggle('selected');
 };
 
@@ -32,11 +33,11 @@ export const refreshCartElements = () => {
   totalText.innerText = `€ ${getTotal() || '0.00'}`;
 };
 
-export const calculateTravelTime = (departure, arrival) => {
+export const calculateTravelTime = (departure: string, arrival: string) => {
   const dep = parseFloat(departure.replace(':', '.'));
   const arr = parseFloat(arrival.replace(':', '.'));
   const travelTime = String((arr - dep).toFixed(2));
 
-  const splicedTime = travelTime.split('.');
-  return { hours: splicedTime[0], minutes: splicedTime[1] };
+  const [hours, minutes] = travelTime.split('.');
+  return { hours, minutes };
 };
