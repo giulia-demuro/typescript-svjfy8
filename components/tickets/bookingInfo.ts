@@ -1,4 +1,5 @@
 import { createText } from '../text';
+
 export const setBookingInfo = (options) => {
   const { flightClass, passengers } = options;
   const bookingDiv = document.createElement('div');

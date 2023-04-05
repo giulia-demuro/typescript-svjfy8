@@ -1,5 +1,5 @@
-import { createText } from '../text.js';
-import { calculateTravelTime } from '../../utils.js';
+import { createText } from '../text';
+import { calculateTravelTime } from '../../utils';
 
 export const setFlightInfo = (options) => {
   const { depTime, depAirport, arrTime, arrAirport } = options;

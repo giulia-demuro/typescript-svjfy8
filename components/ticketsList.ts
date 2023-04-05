@@ -3,9 +3,15 @@ import { createTicket } from './ticket';
 import { setCompanyInfo } from './tickets/companyInfo';
 import { setFlightInfo } from './tickets/flightInfo';
 import { setBookingInfo } from './tickets/bookingInfo';
-import { createPrice } from './tickets/price'; 
+import { createPrice } from './tickets/price';
 import { addToCart } from '../state';
-import { Ticket, CompanyInfo, FlightInfo, BookingInfo } from '../types';
+import {
+  Ticket,
+  CompanyInfo,
+  FlightInfo,
+  BookingInfo,
+  PriceInfo,
+} from '../types';
 
 export const ticketsList = () => {
   const tickets = document.createElement('div');
@@ -13,32 +19,37 @@ export const ticketsList = () => {
   tickets.setAttribute('class', 'd-flex-col');
 
   flights.forEach((item) => {
-    const companyInfo = setCompanyInfo({
+    const company: CompanyInfo = {
       companyName: item.companyName,
       companyLogo: item.companyLogo,
       aircraftType: item.aircraftType,
-    });
+    };
+    const companyInfo = setCompanyInfo(company);
 
-    const flightInfo = setFlightInfo({
+    const flight: FlightInfo = {
       depTime: item.departureTime,
       depAirport: item.departureAirport,
       arrTime: item.arrivalTime,
       arrAirport: item.arrivalAirport,
-    });
+    };
+    const flightInfo = setFlightInfo(flight);
 
-    const bookingInfo = setBookingInfo({
+    const booking: BookingInfo = {
       flightClass: item.flightClass,
       passengers: item.passengers,
-    });
-
-    const ticketId = item.price;
+    };
+    const bookingInfo = setBookingInfo(booking);
 
     const price = createPrice({
       price: item.price,
-      onClick: () => addToCart(item),
+      onclick: () => {
+        console.log('Click');
+        addToCart(item);
+      },
     });
+
     const ticket = createTicket(companyInfo, flightInfo, price, bookingInfo);
-    ticket.setAttribute('id', ticketId);
+    ticket.setAttribute('id', String(item.price));
 
     tickets.appendChild(ticket);
   });

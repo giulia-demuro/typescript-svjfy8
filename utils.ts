@@ -1,6 +1,6 @@
 import { removeFromCart, getCartItems, getTotal } from './state';
 import { createCartElement } from './components/cartElement';
-import { Ticket, cart } from './types';
+import { Ticket, CartElement } from './types';
 
 export const refreshUI = (item: Ticket) => {
   refreshCartElements();
@@ -18,12 +18,15 @@ export const refreshCartElements = () => {
   cartElements.innerHTML = '';
 
   elements.forEach((item) => {
-    const newElement = createCartElement({
+    const cartElement = {
       depTime: item.departureTime,
       depAirport: item.departureAirport,
       arrTime: item.arrivalTime,
       arrAirport: item.arrivalAirport,
       price: item.price,
+    };
+    const newElement = createCartElement({
+      ...cartElement,
       onclick: () => removeFromCart(item),
     });
 

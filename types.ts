@@ -18,6 +18,14 @@ export type Cart = {
   total: number;
 };
 
+export type CartElement = {
+  depTime: string;
+  depAirport: string;
+  arrTime: string;
+  arrAirport: string;
+  price: number;
+};
+
 export type CompanyInfo = {
   companyName: string;
   companyLogo: string;
@@ -34,4 +42,12 @@ export type FlightInfo = {
 export type BookingInfo = {
   flightClass: string;
   passengers: number;
+};
+
+export type Text = {
+  text: string;
+  color: string;
+  size: string;
+  tag: string;
+  style: string;
 };

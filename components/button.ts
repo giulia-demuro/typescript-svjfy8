@@ -1,9 +1,9 @@
-export const createButton = (text, style, handleClick) => {
+export const createButton = (text: string, style: string, handleClick) => {
   const newButton = document.createElement('button');
   newButton.innerText = text;
   newButton.classList.add(style);
   newButton.classList.add('button');
-  newButton.onclick = handleClick;
+  newButton.addEventListener('click', handleClick);
 
   console.log(newButton.name);
 
