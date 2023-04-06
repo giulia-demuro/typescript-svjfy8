@@ -1,9 +1,9 @@
 import { ticketsList } from './components/ticketsList';
-import { createCart } from './components/cart'; 
+import { createCart } from './components/cart';
 
 import './style.css';
 
-const appDiv = document.getElementById('app');
+const appDiv = document.getElementById('app')!;
 
 const containerDiv = document.createElement('div');
 
