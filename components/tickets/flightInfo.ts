@@ -1,7 +1,8 @@
 import { createText } from '../text';
 import { calculateTravelTime } from '../../utils';
+import { FlightInfo } from '../../types';
 
-export const setFlightInfo = (options) => {
+export const setFlightInfo = (options: FlightInfo) => {
   const { depTime, depAirport, arrTime, arrAirport } = options;
   const flightDiv = document.createElement('div');
 

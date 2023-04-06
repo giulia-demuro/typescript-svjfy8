@@ -1,6 +1,7 @@
+import { BookingInfo } from '../../types';
 import { createText } from '../text';
 
-export const setBookingInfo = (options) => {
+export const setBookingInfo = (options: BookingInfo) => {
   const { flightClass, passengers } = options;
   const bookingDiv = document.createElement('div');
   bookingDiv.classList.add('booking-info');

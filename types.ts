@@ -44,6 +44,11 @@ export type BookingInfo = {
   passengers: number;
 };
 
+export type PriceInfo = {
+  price: number;
+  onClick: () => void;
+};
+
 export type Text = {
   text: string;
   color: string;

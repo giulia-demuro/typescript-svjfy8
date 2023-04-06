@@ -1,4 +1,8 @@
-export const createButton = (text: string, style: string, handleClick) => {
+export const createButton = (
+  text: string,
+  style: string,
+  handleClick: () => void
+) => {
   const newButton = document.createElement('button');
   newButton.innerText = text;
   newButton.classList.add(style);

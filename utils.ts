@@ -5,15 +5,15 @@ import { Ticket, CartElement } from './types';
 export const refreshUI = (item: Ticket) => {
   refreshCartElements();
 
-  const selectedElement = document.getElementById(String(item.price));
+  const selectedElement = document.getElementById(String(item.price))!;
   selectedElement.classList.toggle('selected');
 };
 
 export const refreshCartElements = () => {
   const elements = getCartItems();
 
-  const cartElements = document.getElementById('cart-elements');
-  const totalText = document.getElementById('total');
+  const cartElements = document.getElementById('cart-elements')!;
+  const totalText = document.getElementById('total')!;
 
   cartElements.innerHTML = '';
 

@@ -5,13 +5,7 @@ import { setFlightInfo } from './tickets/flightInfo';
 import { setBookingInfo } from './tickets/bookingInfo';
 import { createPrice } from './tickets/price';
 import { addToCart } from '../state';
-import {
-  Ticket,
-  CompanyInfo,
-  FlightInfo,
-  BookingInfo,
-  PriceInfo,
-} from '../types';
+import { CompanyInfo, FlightInfo, BookingInfo, PriceInfo } from '../types';
 
 export const ticketsList = () => {
   const tickets = document.createElement('div');
@@ -40,15 +34,18 @@ export const ticketsList = () => {
     };
     const bookingInfo = setBookingInfo(booking);
 
-    const price = createPrice({
+    const priceInfo: PriceInfo = {
       price: item.price,
-      onclick: () => {
-        console.log('Click');
-        addToCart(item);
-      },
-    });
+      onClick: () => addToCart(item),
+    };
+    const price = createPrice(priceInfo);
 
-    const ticket = createTicket(companyInfo, flightInfo, price, bookingInfo);
+    const ticket = createTicket(
+      companyInfo,
+      flightInfo,
+      priceInfo,
+      bookingInfo
+    );
     ticket.setAttribute('id', String(item.price));
 
     tickets.appendChild(ticket);

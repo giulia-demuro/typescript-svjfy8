@@ -1,7 +1,8 @@
+import { CompanyInfo } from '../../types';
 import { createText } from '../text';
 import { createLogo } from './logo';
 
-export const setCompanyInfo = (options) => {
+export const setCompanyInfo = (options:CompanyInfo) => {
   const { companyName, companyLogo, aircraftType } = options;
 
   const companyInfoDiv = document.createElement('div');
