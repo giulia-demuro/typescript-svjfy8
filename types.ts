@@ -18,13 +18,21 @@ export type Cart = {
   total: number;
 };
 
-export type CartElement = {
+export type FlightInfo = {
   depTime: string;
   depAirport: string;
   arrTime: string;
   arrAirport: string;
+};
+
+export type PriceInfo = {
   price: number;
   onClick: () => void;
+};
+
+export type CartElement = {
+  flight: FlightInfo;
+  price: PriceInfo;
 };
 
 export type CompanyInfo = {
@@ -33,21 +41,9 @@ export type CompanyInfo = {
   aircraftType: string;
 };
 
-export type FlightInfo = {
-  depTime: string;
-  depAirport: string;
-  arrTime: string;
-  arrAirport: string;
-};
-
 export type BookingInfo = {
   flightClass: string;
   passengers: number;
-};
-
-export type PriceInfo = {
-  price: number;
-  onClick: () => void;
 };
 
 export type Text = {
