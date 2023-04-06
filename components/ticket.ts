@@ -1,4 +1,9 @@
-export const createTicket = (companyInfo, flightInfo, price, bookingInfo) => {
+export const createTicket = (
+  companyInfo: HTMLElement,
+  flightInfo: HTMLElement,
+  price: HTMLElement,
+  bookingInfo: HTMLElement
+) => {
   const ticketElement = document.createElement('div');
   const mainInfo = document.createElement('div');
 

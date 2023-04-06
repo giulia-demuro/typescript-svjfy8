@@ -1,8 +1,9 @@
 import { createText } from './text';
 import { createButton } from './button';
+import { CartElement } from '../types';
 
-export const createCartElement = (options) => {
-  const { depTime, depAirport, arrTime, arrAirport, price, onclick } = options;
+export const createCartElement = (options: CartElement) => {
+  const { depTime, depAirport, arrTime, arrAirport, price, onClick } = options;
   const flightInfo = document.createElement('div');
   const priceInfo = document.createElement('div');
 
@@ -42,7 +43,7 @@ export const createCartElement = (options) => {
   priceText.setAttribute('class', 'price-text');
   priceDiv.appendChild(priceText);
 
-  const deleteButton = createButton(`✖`, 'delete', onclick);
+  const deleteButton = createButton(`✖`, 'delete', onClick);
 
   priceInfo.classList.add('cart-price-info');
   priceInfo.classList.add('class', 'd-flex-col');

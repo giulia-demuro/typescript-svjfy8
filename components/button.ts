@@ -9,7 +9,7 @@ export const createButton = (
   newButton.classList.add('button');
   newButton.addEventListener('click', handleClick);
 
-  console.log(newButton.name);
+  console.log(newButton);
 
   return newButton;
 };

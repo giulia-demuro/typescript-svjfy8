@@ -24,11 +24,9 @@ export const refreshCartElements = () => {
       arrTime: item.arrivalTime,
       arrAirport: item.arrivalAirport,
       price: item.price,
+      onClick: () => removeFromCart(item)
     };
-    const newElement = createCartElement({
-      ...cartElement,
-      onclick: () => removeFromCart(item),
-    });
+    const newElement = createCartElement(cartElement);
 
     cartElements.appendChild(newElement);
   });

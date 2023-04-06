@@ -43,7 +43,7 @@ export const ticketsList = () => {
     const ticket = createTicket(
       companyInfo,
       flightInfo,
-      priceInfo,
+      price,
       bookingInfo
     );
     ticket.setAttribute('id', String(item.price));

@@ -24,6 +24,7 @@ export type CartElement = {
   arrTime: string;
   arrAirport: string;
   price: number;
+  onClick: () => void;
 };
 
 export type CompanyInfo = {
